@@ -1,0 +1,26 @@
+<% if flash[:notice] %>
+	<div class = "alert alert-success">
+			<%= flash[:notice] %>
+	</div>
+<% end %>
+
+<%= render partial: "form" %>
+
+<table class = "table table-bordered table-hover">
+	<thead>
+		<tr>
+			<td>Latitude</td>
+			<td>Longitude</td>
+			<td>Radius</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @geofences.each do |geofence| %>
+			<tr>
+				<td><%= geofence.latitude %></td>
+				<td><%= geofence.longitude %></td>
+				<td><%= geofence.radius %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

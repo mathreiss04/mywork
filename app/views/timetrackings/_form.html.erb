@@ -1,0 +1,35 @@
+<% @timetracking.errors.full_messages.each do |msg| %>
+	<div class = "alert alert-danger" role = "alert">
+		<%= msg %>
+	</div>
+<% end %>
+
+<%= form_for @timetracking do |form| %>
+	<div class = "row">
+		<div class = "col-sm-2">
+			<div class = "form-group">
+				<%= form.label :latitude %>
+				<%= form.text_field :latitude, class:"form-control" %>
+			</div>
+		</div>
+	</div>
+
+	<div class = "row">
+		<div class = "col-sm-2">
+			<div class = "form-group">
+				<%= form.label :longitude %>
+				<%= form.text_field :longitude, class:"form-control" %>
+			</div>
+		</div>
+	</div>
+
+	<div class = "row">
+		<div class = "col-sm-8">
+			<div class = "form-group">
+				<%= form.label :comments %>
+				<%= form.text_area :comments, class:"form-control", rows:4 %>
+			</div>
+		</div>
+	</div>
+	<%= form.submit "Check", class:"btn btn-primary" %>
+<% end %>

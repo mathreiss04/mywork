@@ -1,0 +1,28 @@
+<% if flash[:notice] %>
+	<div class = "alert alert-success">
+			<%= flash[:notice] %>
+	</div>
+<% end %>
+
+<%= render partial: "form" %>
+
+<table class = "table table-bordered table-hover">
+	<thead>
+		<tr>
+			<td>Latitude</td>
+			<td>Longitude</td>
+			<td>Created At</td>
+			<td>Comments</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @timetrackings.each do |timetracking| %>
+			<tr>
+				<td><%= timetracking.latitude %></td>
+				<td><%= timetracking.longitude %></td>
+				<td><%= timetracking.created_at %></td>
+				<td><%= timetracking.comments %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
